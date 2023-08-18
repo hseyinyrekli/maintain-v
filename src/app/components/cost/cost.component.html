@@ -1,0 +1,226 @@
+<div id="formDiv" class="py-5 container">
+  <div class="row">
+    <div class="shadow-lg rounded card col-12 col-md-12 col-lg-6">
+      <div>
+        <p
+          class="card-title text-center py-4 fw-bolder"
+          style="font-size: 1.6em"
+        >
+          Maliyet Hesaplama Robotu
+        </p>
+      </div>
+      <form id="form" [formGroup]="calcForm">
+        <div [ngClass]="isShow ? 'd-none' : ''" class="row mb-4">
+          <div class="col-6 col-md-6 col-lg-6" style="margin: auto">
+            <label class="form-label" for="typeNumber">
+              İşletmedeki Makine Sayısı(Adet)
+            </label>
+            <div class="form-outline" style="width: 100%">
+              <input
+                placeholder="5"
+                type="number"
+                id="typeNumber"
+                class="form-control"
+                formControlName="machineNumber"
+                [ngClass]="{
+                  'is-invalid error': submitted && f['machineNumber'].errors
+                }"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-6">
+            <label class="form-label" for="typeNumber"
+              >Günlük Çalışma Süresi(Saat)</label
+            >
+            <div class="form-outline" style="width: 100%">
+              <input
+                placeholder="12"
+                type="number"
+                id="typeNumber"
+                class="form-control"
+                formControlName="dailyHour"
+                [ngClass]="{
+                  'is-invalid error': submitted && f['dailyHour'].errors
+                }"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-12">
+            <label class="form-label" for="typeNumber">
+              1 Makinenin Haftada Çalıştığı Gün Sayısı
+            </label>
+            <div class="form-outline" style="width: 100%">
+              <input
+                placeholder="5"
+                type="number"
+                id="typeNumber"
+                class="form-control"
+                formControlName="workingDayNumber"
+                [ngClass]="{
+                  'is-invalid error': submitted && f.workingDayNumber.errors
+                }"
+              />
+            </div>
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label"
+              >1 Makine 1 Saat Üretilen Ticari Değeri(TL)</label
+            >
+            <input
+              placeholder="₺"
+              type="number"
+              class="form-control"
+              formControlName="hourlyCost"
+              [ngClass]="{
+                'is-invalid error': submitted && f.hourlyCost.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label">
+              1 Makine Parkurunun Toplam Cirosu(TL)
+            </label>
+            <input
+              type="number"
+              placeholder="₺"
+              class="form-control"
+              formControlName="totalMoney"
+              [ngClass]="{
+                'is-invalid error': submitted && f.totalMoney.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label"> Operatör Maaş Maliyeti(TL) </label>
+            <input
+              placeholder="₺"
+              type="number"
+              class="form-control"
+              formControlName="employeeCost"
+              [ngClass]="{
+                'is-invalid error': submitted && f.employeeCost.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label"> Makine Başına Operatör Adedi </label>
+            <input
+              placeholder="4"
+              type="number"
+              class="form-control text-muted"
+              formControlName="employeePiece"
+              [ngClass]="{
+                'is-invalid error': submitted && f.employeePiece.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label"> İşletmedeki Mola Süresi(Aylık) </label>
+            <input
+              placeholder="72"
+              type="number"
+              class="form-control"
+              formControlName="breakTime"
+              [ngClass]="{
+                'is-invalid error': submitted && f.breakTime.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label"> İşletmedeki Arıza Süresi(Saat) </label>
+            <input
+              placeholder="24"
+              type="number"
+              class="form-control"
+              formControlName="downTime"
+              [ngClass]="{
+                'is-invalid error': submitted && f.downTime.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <label class="form-label">
+              1 Makine Aylık Elektrik Gideri(TL)
+            </label>
+            <input
+              placeholder="₺"
+              type="number"
+              class="form-control"
+              formControlName="electricCost"
+              [ngClass]="{
+                'is-invalid error': submitted && f.electricCost.errors
+              }"
+            />
+          </div>
+          <div class="form-outline" style="width: 50%">
+            <button
+              id="submitButton"
+              type="button"
+              class="btn btn-outline-primary"
+              (click)="calculate()"
+            >
+              Hesapla
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="row col-12 mb-4 text-center"
+          style="font-size: 1.2em; margin: auto"
+          [ngClass]="isShow ? 'show' : 'd-none'"
+        >
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Açıklama</th>
+                <th scope="col">Maliyet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aylık Duruş Maliyeti</td>
+                <td>{{ mounthlyCost | number }} TL</td>
+              </tr>
+              <tr>
+                <td>Aylık Duruş Maliyeti Toplam Cirodan</td>
+                <td>{{ mounthlyCostMoney | number }} TL</td>
+              </tr>
+              <tr>
+                <td>Aylık Duruşun İş Gücü Maliyeti</td>
+                <td>{{ mounthlyLabor | number }} TL</td>
+              </tr>
+              <tr>
+                <td>Bakımın Elektrik Maliyeti</td>
+                <td>{{ electrictCostMoney | number }} TL</td>
+              </tr>
+              <tr>
+                <td>Toplam Bakım Maliyeti</td>
+                <td>{{ total | number }} TL</td>
+              </tr>
+
+              <div class="col-6 p-3">
+                <button
+                  class="btn btn-outline-primary text-center mt-2"
+                  (click)="backCalc()"
+                >
+                  Hesaplamaya Geri Dönün
+                </button>
+              </div>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-12 col-md-12 col-lg-6">
+      <img
+        width="1080"
+        height="1080"
+        style="margin-left: 8em; margin-top: 3em"
+        src="../../../assets/uploads/cost.png"
+        alt="Maliyet Fotoğrafı"
+      />
+    </div>
+  </div>
+</div>

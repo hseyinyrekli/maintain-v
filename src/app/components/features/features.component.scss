@@ -1,0 +1,31 @@
+.container {
+  margin-top: 12em;
+  .card {
+    border: none;
+    margin-bottom: 2em;
+    padding: 1em;
+    transition: 0.5s;
+  }
+  .card:hover {
+    transform: scale(1.04);
+  }
+}
+.icons {
+  text-align: center;
+  svg {
+    height: 50px;
+    margin-top: 10px;
+  }
+}
+
+.title {
+  margin-top: 15px;
+  height: 5vh;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 500;
+}
+.description {
+  height: 25vh;
+  padding: 10px;
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "textId": "headingOne",
+    "textTarget": "#collapseOne",
+    "textOtherId": "collapseOne",
+    "button": "1. How can I create a work order?",
+    "text": "A new work order can be created by entering the work order module via the web or mobile application."
+  },
+  {
+    "id": 2,
+    "textId": "headingTwo",
+    "textTarget": "#collapseTwo",
+    "textOtherId": "collapseTwo",
+    "button": "2. How can I filter work orders?",
+    "text": "You can provide detail filtering via the search bar or filter button on the work order list."
+  },
+  {
+    "id": 3,
+    "textId": "headingThree",
+    "textTarget": "#collapseThree",
+    "textOtherId": "collapseThree",
+    "button": "3. How can I create periodic maintenance?",
+    "text": "You can create a new periodic maintenance plan by entering the periodical maintenance section on the web application."
+  },
+  {
+    "id": 4,
+    "textId": "headingFour",
+    "textTarget": "#collapseFour",
+    "textOtherId": "collapseFour",
+    "button": "4. How can I use time trigger when creating periodic maintenance?",
+    "text": "With the time trigger in the periodic maintenance creation section, you can set up maintenance plans suitable for the period you want. All you have to do is enter your maintenance period and select the period type. After that, your maintenance work orders will be created automatically."
+  },
+  {
+    "id": 5,
+    "textId": "headingFive",
+    "textTarget": "#collapseFive",
+    "textOtherId": "collapseFive",
+    "button": "5. How can I register a location?",
+    "text": "You can define a new location by entering the locations section on the web application and complete your registration by selecting your address manually or on the map."
+  },
+  {
+    "id": 6,
+    "textId": "headingSix",
+    "textTarget": "#collapseSix",
+    "textOtherId": "collapseSix",
+    "button": "6. How can I create an asset ?",
+    "text": "New asset records can be created from within the asset module via the web application. Barcode or qr code definition can be made to assets automatically."
+  },
+  {
+    "id": 7,
+    "textId": "headingSeven",
+    "textTarget": "#collapseSeven",
+    "textOtherId": "collapseSeven",
+    "button": "7. How can I create a vendor/customer ?",
+    "text": "Belirlemiş olduğunuz periyodik bakım periyodu ve makinaya göre o bakım esnasında harcayabileceğiniz malzeme gruplarını gösteren listedir."
+  }
+]

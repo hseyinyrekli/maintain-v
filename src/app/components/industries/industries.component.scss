@@ -1,0 +1,34 @@
+.content {
+  margin-top: 8em;
+}
+h1 {
+  color: #0a163e;
+  font-size: 3em;
+}
+p {
+  color: #575757;
+}
+li {
+  color: #575757;
+}
+a {
+  text-decoration: none;
+}
+.card {
+  border: none;
+  background-color: #f8f9fa;
+  margin-top: 5em !important;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  position: sticky;
+  top: 17%;
+}
+.card a {
+  color: #004cb4;
+  padding: 1em;
+  display: block;
+}
+
+.card a:hover {
+  background-color: #f8f9fa;
+}

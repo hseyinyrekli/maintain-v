@@ -1,0 +1,147 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+.home1 {
+  height: 100vh;
+  position: relative;
+}
+.home1 img {
+  width: 100% !important;
+  height: 100vh !important;
+  position: absolute;
+
+  object-fit: cover;
+}
+h1 {
+  font-size: 4em !important;
+}
+.home-content .row {
+  padding: 3em !important;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1em;
+}
+
+.home-content #card1 {
+  margin-top: 5%;
+  margin-left: 4em !important;
+  width: 20%;
+  padding: 1em;
+  position: relative;
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+  color: white;
+  background-color: transparent !important;
+  transition: 0.3s;
+  height: 50vh;
+}
+
+.home-content #card1 h2 {
+  -webkit-text-stroke: 1px;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-content #card1:hover {
+  cursor: pointer;
+  background-color: #212529 !important;
+  opacity: 0.8;
+  margin-left: 3em;
+}
+.home-content {
+  position: relative;
+  padding-top: 150px;
+  color: #fff;
+
+  height: 30vh !important;
+}
+.home-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.home-content p {
+  font-size: 0.8em;
+}
+#card1 button {
+  margin-top: 0.7em;
+  width: 100%;
+}
+#card1 .buttons {
+  margin-top: 3rem;
+}
+
+#images .card {
+  margin-top: 3em;
+  border: none;
+
+  img {
+    margin: auto;
+  }
+  width: 100%;
+  height: 60vh;
+}
+
+.store {
+  div {
+    border-radius: 20px !important;
+  }
+  a {
+    color: black;
+  }
+  margin-top: 3em !important;
+  transition: 0.3s;
+}
+.store div:hover {
+  cursor: pointer;
+  background-color: #212529 !important;
+  opacity: 0.8;
+  a {
+    color: white;
+  }
+}
+
+.footer {
+  margin-top: 20%;
+  width: 100% !important;
+  object-fit: cover;
+  position: relative;
+}
+
+.home5 {
+  z-index: 1;
+  position: absolute;
+}
+#store1 div a:hover {
+  background-color: red !important;
+}
+@media (max-width: 600px) {
+  #card1 {
+    width: 50% !important;
+    margin-left: 1em !important;
+  }
+  h2 {
+    width: 100%;
+    font-size: 1.5em !important;
+    padding: 0.5em;
+  }
+
+  .home-content button {
+    width: 100%;
+  }
+  #card1 .buttons {
+    margin-top: 1rem;
+  }
+  .footer {
+    margin-top: 100vh !important;
+  }
+  .store div img {
+    width: 50px;
+  }
+  .store div span {
+    font-size: 1em !important;
+  }
+}

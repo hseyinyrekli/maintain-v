@@ -1,0 +1,209 @@
+<nav
+  id="navbar"
+  class="navbar navbar-expand-lg bg-body-tertiary"
+  [ngClass]="setClass()"
+>
+  <a class="navbar-brand" routerLink="">
+    <img
+      *ngIf="currentPage == ''"
+      class="m-3 d-lg-block"
+      style="margin-left: 2em !important"
+      width="150px"
+      src="assets/uploads/LOGOMAIN.png"
+      alt="Maintain-logo"
+      [src]="
+        isScrolled
+          ? 'assets/uploads/LOGOMAIN2.png'
+          : 'assets/uploads/LOGOMAIN.png'
+      "
+    />
+    <img
+      width="150px"
+      *ngIf="currentPage !== ''"
+      class="m-3 d-none d-lg-block"
+      src="assets/uploads/LOGOMAIN2.png"
+      alt="VidaMMS Logo"
+    />
+    <img
+      width="150px"
+      class="m-3 d-block d-lg-none"
+      src="assets/uploads/LOGOMAIN2.png"
+      alt="VidaMMS Logo"
+    />
+  </a>
+
+  <button
+    style="color: white; margin-right: 1em; border: none"
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-label="Toggle navigation"
+  >
+    <svg
+      style="color: white"
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="30"
+      fill="currentColor"
+      class="bi bi-list"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+      />
+    </svg>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end text-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink=""
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="industries"
+          >Industries</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="features"
+          >Features</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="references"
+          >References</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="pricing"
+          >Pricing</a
+        >
+      </li>
+      <li class="nav-item dropdown3">
+        <a class="nav-link">
+          <button
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (mouseenter)="startRotation3()"
+            (mouseleave)="stopRotation3()"
+            class="dropbtn3"
+          >
+            Sources
+            <svg
+              id="gear3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-gear"
+              viewBox="0 0 16 16"
+              [class.rotate]="isRotating3"
+            >
+              <path
+                d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"
+              />
+              <path
+                d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"
+              />
+            </svg>
+          </button>
+          <div
+            id="menu3"
+            (mouseenter)="startRotation3()"
+            (mouseleave)="stopRotation3()"
+            class="dropdown-content3 row text-start shadow-lg bg-white rounded"
+          >
+            <div class="col-6" style="float: left">
+              <a routerLink="blogs">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 448 512"
+                  style="margin-right: 0.5em; fill: #572320"
+                >
+                  <path
+                    d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+                  />
+                </svg>
+                Blogs</a
+              >
+              <a routerLink="cost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 384 512"
+                  style="margin-right: 0.5em; fill: #203557"
+                >
+                  <path
+                    d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"
+                  />
+                </svg>
+                ROI Calculator</a
+              >
+            </div>
+            <div class="col-6" style="float: right">
+              <a routerLink="center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 640 512"
+                  style="margin-right: 0.5em; fill: #36383a"
+                >
+                  <path
+                    d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"
+                  />
+                </svg>
+                Learning Center</a
+              >
+              <a routerLink="support">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                  style="margin-right: 0.5em; fill: #4a5b07"
+                >
+                  <path
+                    d="M256 48C141.1 48 48 141.1 48 256v40c0 13.3-10.7 24-24 24s-24-10.7-24-24V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24H240c-26.5 0-48-21.5-48-48s21.5-48 48-48h32c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40V256c0-114.9-93.1-208-208-208zM144 208h16c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V272c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64v48c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V240c0-17.7 14.3-32 32-32h16z"
+                  />
+                </svg>
+                Support</a
+              >
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <ul id="target" class="navbar-nav">
+      <li class="nav-item" id="demo">
+        <a class="nav-link" href="#">REQUEST DEMO</a>
+      </li>
+      <li class="nav-item" id="login">
+        <a class="nav-link" routerLink="login">LOGIN</a>
+      </li>
+    </ul>
+  </div>
+</nav>

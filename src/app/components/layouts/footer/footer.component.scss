@@ -1,0 +1,40 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+.footer {
+  display: block;
+  background-color: #06044d;
+}
+li {
+  list-style: none;
+  color: white;
+}
+h5 {
+  color: white;
+  font-weight: bold;
+}
+#list {
+  padding: 2em;
+}
+.border {
+  border-top: 2px solid white;
+  margin: auto;
+  width: 50%;
+}
+#links {
+  padding-bottom: 2em;
+}
+#links li {
+  margin-left: 10%;
+  padding: 1em;
+  border: 1px solid white;
+}
+#links li:hover {
+  cursor: pointer;
+  background-color: #212529 !important;
+  opacity: 0.8;
+}
+span {
+  padding: 1em;
+}

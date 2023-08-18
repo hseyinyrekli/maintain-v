@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="row justify-content-end">
+    <h1 class="blogTitle">BLOG</h1>
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="search"
+        placeholder="enter your search terms here"
+      />
+      <button>go!</button>
+    </div>
+  </div>
+
+  <div class="blog">
+    <div class="container row">
+      <div class="card col-4" *ngFor="let data of blogs | blogs : search">
+        <div class="face face1">
+          <div class="content">
+            <img [src]="data.src" />
+            <h3>{{ data.name }}</h3>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <p>
+              {{ data.title }}
+            </p>
+            <a (click)="goToDetailPage(data.slug)"> Read More </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

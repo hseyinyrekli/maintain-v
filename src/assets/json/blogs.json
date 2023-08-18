@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "src": "assets/completed.png",
+    "name": "Work Order Management",
+    "title": "Work orders help a company monitor and manage its maintenance work.",
+
+    "slug": "work-order-management",
+    "descriptions": [
+      {
+        "subtitle": "Work Order Management",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "Work orders help a company monitor and manage its maintenance work. Managing the work order is essential in construction, manufacturing, and other industries that rely heavily on equipment and machinery. If you're a maintenance manager or want to become one, learning more about work orders and how to manage them can ensure the timely maintenance of machines and improve operations. In this article, we explain what work order management is, explore its typical process, outline what it includes, discuss the benefits of managing work orders, and describe how to use computerized maintenance management systems (CMMS) to manage work orders."
+      },
+      {
+        "text": "Work order management involves organizing maintenance requests and processing work orders on time to minimize asset downtime. Traditionally, maintenance teams have relied on paper-based work orders. Though these orders are simple to create, managing physical copies can be more time-consuming and may lead to challenges, so modern companies often use CMMS to ensure more effective document management."
+      },
+      {
+        "text": "A good work order provides the details for maintenance managers and technicians to understand and complete the maintenance task effectively. Typically, a work order includes:"
+      },
+      {
+        "text": "• a detailed description of the issue, including the location",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• the priority level of the work order",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• the name and contact information of the user requesting the work order",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• the name and contact information of the maintenance team member completing the work order",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• the name of the manager approving the completed work order",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• the estimated maintenance completion date",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• the estimated cost incurred to complete the work order",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• a list of tools or parts required",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "• a detailed description of the completed work",
+        "style": "font-style:italic"
+      },
+      {
+        "subtitle": "Types of Work Orders",
+
+        "class": "fw-bolder"
+      },
+      {
+        "text": "Here are some types of work orders you may use or manage in your role:"
+      },
+      {
+        "text": "Preventive maintenance:",
+
+        "style": "text-decoration:underline"
+      },
+      {
+        "text": " This is a scheduled routine maintenance task performed on machinery and equipment. It prevents the deterioration or failure of any machinery and ensures it works as expected.",
+        "style": "display:inline"
+      },
+      {
+        "text": "Inspection:",
+        "style": "text-decoration:underline"
+      },
+      {
+        "text": "In an inspection, a maintenance technician audits and inspects an asset based on a predefined set of parameters. If the technician identifies a problem during the inspection, they create a new work order to solve that issue.",
+        "style": "display:inline"
+      },
+      {
+        "text": "Emergency:",
+        "style": "text-decoration:underline"
+      },
+      {
+        "text": "A user creates an emergency work order when an unscheduled breakdown of a machine or equipment occurs. These maintenance orders require immediate attention to avoid costly downtime.",
+        "style": "display:inline"
+      },
+      {
+        "text": "Corrective maintenance:",
+        "style": "text-decoration:underline"
+      },
+      {
+        "text": "When the maintenance technician identifies potential issues during a routine inspection, they generate corrective maintenance work orders. These orders resolve issues before the problem becomes significant.",
+        "style": "display:inline"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "src": "assets/clipboard.png",
+    "name": "Managing Work Orders",
+    "title": "Here are a few benefits to consider when exploring strategies to effectively manage and organize work orders:",
+    "slug": "managing-work-orders",
+    "descriptions": [
+      {
+        "subtitle": "Benefits of Managing Work Orders",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "Here are a few benefits to consider when exploring strategies to effectively manage and organize work orders:"
+      },
+
+      {
+        "subtitle": "Increases Organization",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "Using a work order for managing and tracking maintenance increases the team's level of organization. It's typically easier to save, organize, and recall digital copies rather than printed copies of paperwork. With an efficient work order system, a maintenance technician can quickly understand the repair task, determine its priority, and choose the tools necessary to repair the equipment. Because of the organization and streamlined communication, technicians can quickly work through maintenance requests, improving workplace efficiency."
+      },
+      {
+        "subtitle": "Eliminates paperwork",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "You can use effective techniques and tools to manage work orders digitally. This helps the company save money on the manual labour of data entry, paper, and other stationery costs. This also supports a more ethical and environmentally-friendly process, as it removes the need for excess paper usage."
+      },
+      {
+        "subtitle": "Ensures inventory control",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "Managing work orders can help you identify the parts and tools for performing specific maintenance. Every time you complete a work order, the inventory updates automatically. As these work order systems ensure inventory control, it reduces wastage and eliminates the instance of depleted inventory."
+      },
+      {
+        "subtitle": "Ensures continuous improvement",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "What is the work order management process?"
+      },
+      {
+        "text": "This management process considers the work order at every stage of the maintenance process, starting from request to completion. The process is as follows:"
+      },
+      {
+        "text": "1. Task identification",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "Typically, every maintenance task falls into two groups, planned and unplanned maintenance. Planned maintenance includes tasks and work orders you know ahead of time, like routine inspections or yearly maintenance. Unplanned maintenance includes unprecedented duties, like an unexpected breakdown. During the task identification step, you identify what the problem is and how you can resolve the maintenance issue."
+      },
+      {
+        "text": "2. Work order creation",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "After identifying the issue, a work order request gets created and submitted. The maintenance team receives a notification about the problem. For instance, if a boiler breaks down in a chemical plant, the operator creates a work order request and submits it to the maintenance department. If it's a planned maintenance task, the work order gets completed and triggers a reminder at the specified time."
+      },
+      {
+        "text": "3. Work order approval",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "After creating a work order, the maintenance manager approves it before the work begins. Approving the order ensures there is no duplication of work. Often, users might submit a work order already in progress or one the team already has on their to-do list."
+      },
+      {
+        "text": "4. Work order prioritization",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "After approving the work order, the maintenance manager evaluates these orders depending on their urgency, existing backlogs, and maintenance team availability. Prioritizing a maintenance request is essential, especially if the user didn't specify its priority. The goal of this step is to prioritize time-sensitive work orders. For instance, a fused light bulb has a low priority compared to a non-functional conveyor belt in a paper manufacturing plant."
+      },
+      {
+        "text": "5. Work order distribution",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "In this step, the maintenance manager assigns the work orders that were previously approved and prioritized to the maintenance team. A work order can take five minutes or several days to complete, depending on its complexity. So, they can assign the work to one or several team members depending upon their current workloads and capacity to complete the order on time."
+      },
+
+      {
+        "text": "6. Work order execution and completion",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "Once assigned, the maintenance team focuses on executing and completing the work order. During this step, it's essential for the team to follow safety protocols and guidelines in place for repairing specific machinery or equipment. This is essential to prevent future breakdowns and improve the company's efficiency."
+      },
+      {
+        "text": "7. Work order documentation",
+        "class": "fw-bolder",
+        "style": "font-style:italic"
+      },
+      {
+        "text": "Once the maintenance team completes all the terms of the work order, the maintenance manager can close it. Either they or a more senior manager typically approves the work order for compliance and to document the entire process. A properly written and organized work order log is essential for reviewing past solutions, building asset inventories, and preparing for workplace audits. This log allows the maintenance team to spot any missed steps or alternate solutions if the same maintenance issues occur again."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "src": "assets/bombs.png",
+    "name": "Using a CMMS",
+    "title": "CMMS is a comprehensive system for managing work orders that automates the entire maintenance process.",
+    "slug": "using-cmms",
+    "descriptions": [
+      {
+        "subtitle": "Using a CMMS for Managing Work Orders",
+        "class": "fw-bolder"
+      },
+      {
+        "text": "CMMS is a comprehensive system for managing work orders that automates the entire maintenance process. A CMMS helps a company take control of their upcoming work and previous backlog, which increases productivity and ensures compliance. Apart from helping you create, manage, and prioritize work orders from anywhere, a CMMS maintains work history and generates reports on the maintenance work."
+      },
+      {
+        "text": "Using a CMMS, you can manage resource availability and track the maintenance technician's work order time from start to finish. Whenever anyone opens or closes a work order, the CMMS updates it immediately, ensuring everyone uses the same data. As this system stores data in the cloud, you and your team members can typically access and update the information from anywhere."
+      }
+    ]
+  }
+]

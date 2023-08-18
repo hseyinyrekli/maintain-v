@@ -1,0 +1,134 @@
+<div class="content">
+  <span class="back">
+    <a routerLink="">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        class="bi bi-box-arrow-left"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"
+        />
+        <path
+          fill-rule="evenodd"
+          d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
+        />
+      </svg>
+    </a>
+  </span>
+  <div id="card">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <img class="loginPhoto" src="assets/uploads/loginScreen.png" alt="" />
+      </div>
+      <div [ngClass]="isShow ? 'd-none' : ''" class="col-lg-6 col-12">
+        <img class="logoPhoto" src="assets/uploads/LOGOMAIN2.png" alt="" />
+        <hr class="hr-text" data-content="LOGIN" />
+        <form class="p-2">
+          <div class="form-group p-2">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="form-group p-2">
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+            />
+          </div>
+          <div class="row p-2">
+            <div class="form-check col-6">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >Keep me logged in</label
+              >
+            </div>
+            <div class="col-6 text-end">
+              <a href="#">Forgot Password</a>
+            </div>
+          </div>
+          <button class="login mb-4">
+            LOGIN
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </form>
+        <hr />
+        <p class="text-muted text-center">
+          Don't have an account yet ?
+          <span style="cursor: pointer" (click)="showScreen()">Sign Up</span>
+        </p>
+      </div>
+      <div [ngClass]="isShow ? 'show' : 'd-none'" class="col-lg-6 col-12">
+        <img class="logoPhoto" src="assets/uploads/LOGOMAIN2.png" alt="" />
+        <hr class="hr-text" data-content="SIGN UP" />
+        <form class="p-2">
+          <div class="form-group p-2">
+            <input type="email" class="form-control" placeholder="Your Email" />
+          </div>
+          <div class="form-group p-2">
+            <input type="text" class="form-control" placeholder="Your Phone" />
+          </div>
+          <div style="margin: auto" class="row">
+            <div class="form-group p-2 col-6">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Enter Your Password"
+              />
+            </div>
+            <div class="form-group p-2 col-6">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Re-Enter Your Password"
+              />
+            </div>
+          </div>
+
+          <button class="login mb-4">
+            SIGN UP
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,225 @@
+#navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background: transparent !important;
+}
+
+#target {
+  margin-left: 3em;
+  margin-right: 1em;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white !important;
+}
+ul li {
+  margin: 0.3em;
+}
+#target #demo {
+  color: white !important;
+  border: 2px solid #004cb4;
+  border-radius: 5px;
+  background-color: #004cb4;
+}
+
+#target #demo a {
+  color: white !important;
+  font-size: 1em !important;
+}
+
+#target #login a {
+  font-size: 1em !important;
+}
+#target #login {
+  font-size: 1em;
+  border: 2px solid #004cb4;
+  border-radius: 5px;
+}
+#target #login:hover {
+  background-color: #004cb4;
+  color: white !important;
+}
+.active {
+  font-weight: bolder;
+}
+
+#navbar.isScrolled {
+  background-color: #ffff !important;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+
+  li a {
+    color: #004cb4 !important;
+  }
+  li a button {
+    color: #004cb4 !important;
+  }
+}
+
+.bg-color {
+  a {
+    color: #212529 !important;
+  }
+  li button {
+    color: #212529 !important;
+  }
+
+  .active {
+    color: #1a49b3 !important;
+  }
+}
+
+//DROPDOWN INDUSTRIES
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  margin-right: 200em !important;
+  width: 550px;
+  background-color: #f9f9f9;
+  z-index: 1;
+  a {
+    color: #004cb4 !important;
+  }
+}
+#menu div a {
+  padding-left: 1em;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+//DROPDOWN FEATURES
+.dropbtn2 {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content2 {
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  width: 600px;
+  background-color: #f9f9f9;
+  z-index: 1;
+  a {
+    color: #004cb4 !important;
+  }
+}
+#menu2 div a {
+  padding-left: 1em;
+}
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content2 a:hover {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+//DROPDOWN SOURCES
+.dropbtn3 {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content3 {
+  border-radius: 10px;
+  right: 0;
+  display: none;
+  position: absolute;
+  width: 450px;
+  background-color: #f9f9f9;
+  z-index: 1;
+  a {
+    color: #004cb4 !important;
+  }
+}
+#menu3 div a {
+  padding-left: 1em;
+}
+.dropdown-content3 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content3 a:hover {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+// GEAR ANIMATION
+
+#gear.rotate {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+#gear2.rotate {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+#gear3.rotate {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

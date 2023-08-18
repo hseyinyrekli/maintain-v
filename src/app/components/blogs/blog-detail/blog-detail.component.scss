@@ -1,0 +1,61 @@
+.container {
+  padding-bottom: 6em;
+  margin-top: 10em !important;
+}
+.header {
+  background-color: #071850;
+
+  text-align: center;
+  height: 20vh;
+  img {
+    margin-top: 10%;
+    width: 25%;
+  }
+}
+.title {
+  text-align: center;
+  font-weight: 500;
+  padding-top: 10px;
+}
+.footer {
+  a {
+    text-align: center;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-weight: 900;
+    color: #071952;
+    padding: 5px;
+    border: 1px solid #071952;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+  }
+}
+
+.footer a:hover {
+  background-color: #071850;
+  color: white;
+  transform: translate(-70px);
+}
+.card {
+  cursor: pointer;
+  margin-left: 2em !important;
+  transition: all 0.8s ease-in;
+}
+.card:hover {
+  opacity: 0.9;
+  transform: scale(1.01);
+  .footer {
+    display: block !important;
+  }
+}
+#latest .card {
+  position: sticky !important;
+  top: 17%;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+}
