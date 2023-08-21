@@ -102,3 +102,11 @@ a {
   display: block;
   transition: 0.5s;
 }
+#backLog {
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .back svg {
+    fill: white !important;
+  }
+}

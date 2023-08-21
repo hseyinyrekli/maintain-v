@@ -1,7 +1,6 @@
 .content {
   background: linear-gradient(to top, #06044d 50%, #cde4ff 50%);
   padding: 3em;
-  margin-top: 7em;
   p {
     text-align: center;
     font-size: 12px !important;
@@ -9,6 +8,7 @@
   }
 }
 .mainTitle {
+  margin-top: 6em;
   h1 {
     color: #06044d !important;
   }
@@ -98,6 +98,7 @@ ul {
 }
 
 .card {
+  margin-bottom: 8em;
   margin-right: 1em;
   border: none;
   height: auto !important;

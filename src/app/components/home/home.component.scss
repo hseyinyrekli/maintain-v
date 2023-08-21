@@ -88,12 +88,12 @@ h1 {
 .store {
   div {
     border-radius: 20px !important;
+    transition: 0.8s;
   }
   a {
     color: black;
   }
   margin-top: 3em !important;
-  transition: 0.3s;
 }
 .store div:hover {
   cursor: pointer;
@@ -118,10 +118,9 @@ h1 {
 #store1 div a:hover {
   background-color: red !important;
 }
-@media (max-width: 600px) {
+@media (max-width: 980px) {
   #card1 {
     width: 50% !important;
-    margin-left: 1em !important;
   }
   h2 {
     width: 100%;

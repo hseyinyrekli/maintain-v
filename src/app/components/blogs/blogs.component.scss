@@ -1,53 +1,21 @@
-.search-bar {
-  margin-top: 12.2em;
-  position: absolute;
-  left: 50%;
-  display: flex;
-  transform: translate(-50%, -50%);
-  background: #6a89cc;
-  width: 500px;
-  height: 40px;
-  padding: 0.2rem 0.6rem 0.2rem 0.2rem;
-  box-sizing: border-box;
-  box-shadow: 1px 1px 0 0 #4a69bd, 2px 2px 0 0 #4a69bd, 3px 3px 0 0 #4a69bd,
-    4px 4px 0 0 #4a69bd, 5px 5px 0 0 #4a69bd, 6px 6px 0 0 #4a69bd;
-}
-
-.search-bar input {
-  border: 0;
-  width: 85%;
-  padding: 0 1rem;
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.search-bar button {
-  margin-left: auto;
-  background: none;
-  border: none;
-  color: white;
-  font-weight: bolder;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0;
-}
-
-.blogTitle {
-  margin-top: 50px;
-  width: 73% !important;
-  position: absolute;
-  font-size: 15em;
-  -webkit-text-stroke: 1px;
-  -webkit-text-fill-color: transparent;
-}
-
-//
-.container {
-  margin-top: 17em !important;
-  margin-left: 8em !important;
-  margin-bottom: 5em;
-  width: 100%;
+#text {
   margin: auto;
+  height: 65vh;
+  #title {
+    margin-top: 5em;
+    padding: 5em;
+    h1 {
+      -webkit-text-stroke: 1px;
+      -webkit-text-fill-color: transparent;
+      font-size: 8em;
+    }
+  }
+}
+
+.container {
+  margin-top: 1em !important;
+  margin-bottom: 5em;
+  margin-left: 8%;
 }
 
 .container .card {
@@ -133,4 +101,66 @@
 .container .card .face.face2 .content a:hover {
   background: #333;
   color: #fff;
+}
+//
+.search {
+  margin-top: 14em;
+  margin-left: 40%;
+  width: 50%;
+  height: 50px;
+  background-color: #ffff;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.search-input {
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  margin-top: 5px;
+  caret-color: transparent;
+  line-height: 20px;
+  transition: width 0.4s linear;
+}
+
+.search .search-input {
+  padding: 0 10px;
+  width: 100%;
+  caret-color: #004fbc;
+  font-size: 19px;
+  font-weight: 300;
+  transition: width 0.4s linear;
+}
+
+.search-icon {
+  height: 34px;
+  width: 34px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #06044d;
+  font-size: 10px;
+  bottom: 30px;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  #title h1 {
+    font-size: 5em !important;
+  }
+}
+@media (max-width: 980px) {
+  .container {
+    margin: 0;
+    padding-left: 6em;
+  }
+  .search {
+    margin: 0;
+    margin-left: 25%;
+  }
 }

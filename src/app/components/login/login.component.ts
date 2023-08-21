@@ -11,4 +11,8 @@ export class LoginComponent {
   showScreen() {
     this.isShow = true;
   }
+
+  backScreen() {
+    this.isShow = false;
+  }
 }

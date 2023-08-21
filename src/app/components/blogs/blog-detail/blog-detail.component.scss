@@ -33,22 +33,13 @@
   }
 }
 
-.footer a:hover {
-  background-color: #071850;
-  color: white;
-  transform: translate(-70px);
-}
 .card {
   cursor: pointer;
   margin-left: 2em !important;
   transition: all 0.8s ease-in;
 }
 .card:hover {
-  opacity: 0.9;
   transform: scale(1.01);
-  .footer {
-    display: block !important;
-  }
 }
 #latest .card {
   position: sticky !important;

@@ -1,6 +1,18 @@
-.container {
-  margin-top: 7em;
-  padding: 3em;
+#text {
+  margin: auto;
+  height: 65vh;
+  #title {
+    margin-top: 5em;
+    padding: 5em;
+    h1 {
+      -webkit-text-stroke: 1px;
+      -webkit-text-fill-color: transparent;
+      font-size: 7em;
+    }
+  }
+}
+.content {
+  padding: 6em;
 }
 
 #photo1 {
@@ -23,4 +35,9 @@ h1 {
   font-size: 4em;
   -webkit-text-stroke: 1px;
   -webkit-text-fill-color: transparent;
+}
+@media (max-width: 600px) {
+  #title h1 {
+    font-size: 3.5em !important;
+  }
 }

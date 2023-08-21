@@ -1,4 +1,11 @@
-<div id="formDiv" class="py-5 container">
+<div id="text" class="row" style="background-color: #f4f5f6">
+  <div id="title" class="col-12">
+    <h1 data-aos="fade-up">ROI CALCULATOR</h1>
+    <p class="text-muted">Here is MAINTAIN-V's cost calculation robot</p>
+  </div>
+</div>
+
+<div id="formDiv" class="p-5 container">
   <div class="row">
     <div class="shadow-lg rounded card col-12 col-md-12 col-lg-6">
       <div>
@@ -6,14 +13,14 @@
           class="card-title text-center py-4 fw-bolder"
           style="font-size: 1.6em"
         >
-          Maliyet Hesaplama Robotu
+          ROI CALCULATOR
         </p>
       </div>
       <form id="form" [formGroup]="calcForm">
         <div [ngClass]="isShow ? 'd-none' : ''" class="row mb-4">
           <div class="col-6 col-md-6 col-lg-6" style="margin: auto">
             <label class="form-label" for="typeNumber">
-              İşletmedeki Makine Sayısı(Adet)
+              Number of Machines in the Business (Number)
             </label>
             <div class="form-outline" style="width: 100%">
               <input
@@ -31,7 +38,7 @@
 
           <div class="col-6 col-md-6 col-lg-6">
             <label class="form-label" for="typeNumber"
-              >Günlük Çalışma Süresi(Saat)</label
+              >Daily Working Time(Hours)</label
             >
             <div class="form-outline" style="width: 100%">
               <input
@@ -48,7 +55,7 @@
           </div>
           <div class="col-12 col-md-12 col-lg-12">
             <label class="form-label" for="typeNumber">
-              1 Makinenin Haftada Çalıştığı Gün Sayısı
+              1 Machine Working Days per Week
             </label>
             <div class="form-outline" style="width: 100%">
               <input
@@ -64,9 +71,9 @@
             </div>
           </div>
           <div class="form-outline" style="width: 50%">
-            <label class="form-label"
-              >1 Makine 1 Saat Üretilen Ticari Değeri(TL)</label
-            >
+            <label class="form-label">
+              1 Machine 1 Hour Produced Commercial Value (TL)
+            </label>
             <input
               placeholder="₺"
               type="number"
@@ -79,7 +86,7 @@
           </div>
           <div class="form-outline" style="width: 50%">
             <label class="form-label">
-              1 Makine Parkurunun Toplam Cirosu(TL)
+              Total Turnover of 1 Machine Park (TL)
             </label>
             <input
               type="number"
@@ -92,7 +99,7 @@
             />
           </div>
           <div class="form-outline" style="width: 50%">
-            <label class="form-label"> Operatör Maaş Maliyeti(TL) </label>
+            <label class="form-label"> Operator Salary Cost (TL) </label>
             <input
               placeholder="₺"
               type="number"
@@ -104,7 +111,7 @@
             />
           </div>
           <div class="form-outline" style="width: 50%">
-            <label class="form-label"> Makine Başına Operatör Adedi </label>
+            <label class="form-label"> Number of Operators per Machine</label>
             <input
               placeholder="4"
               type="number"
@@ -116,7 +123,7 @@
             />
           </div>
           <div class="form-outline" style="width: 50%">
-            <label class="form-label"> İşletmedeki Mola Süresi(Aylık) </label>
+            <label class="form-label"> Break Time in Business (Monthly) </label>
             <input
               placeholder="72"
               type="number"
@@ -128,7 +135,7 @@
             />
           </div>
           <div class="form-outline" style="width: 50%">
-            <label class="form-label"> İşletmedeki Arıza Süresi(Saat) </label>
+            <label class="form-label"> Downtime in Operation (Hours) </label>
             <input
               placeholder="24"
               type="number"
@@ -141,7 +148,7 @@
           </div>
           <div class="form-outline" style="width: 50%">
             <label class="form-label">
-              1 Makine Aylık Elektrik Gideri(TL)
+              1 Machine Monthly Electricity Expense (TL)
             </label>
             <input
               placeholder="₺"
@@ -160,7 +167,7 @@
               class="btn btn-outline-primary"
               (click)="calculate()"
             >
-              Hesapla
+              Calculate
             </button>
           </div>
         </div>
@@ -173,29 +180,29 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Açıklama</th>
-                <th scope="col">Maliyet</th>
+                <th scope="col">Explanation</th>
+                <th scope="col">Cost</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Aylık Duruş Maliyeti</td>
+                <td>Monthly Downtime Cost</td>
                 <td>{{ mounthlyCost | number }} TL</td>
               </tr>
               <tr>
-                <td>Aylık Duruş Maliyeti Toplam Cirodan</td>
+                <td>Monthly Downtime Cost from Total Turnover</td>
                 <td>{{ mounthlyCostMoney | number }} TL</td>
               </tr>
               <tr>
-                <td>Aylık Duruşun İş Gücü Maliyeti</td>
+                <td>Labor Cost of Monthly Downtime</td>
                 <td>{{ mounthlyLabor | number }} TL</td>
               </tr>
               <tr>
-                <td>Bakımın Elektrik Maliyeti</td>
+                <td>Electricity Cost of Maintenance</td>
                 <td>{{ electrictCostMoney | number }} TL</td>
               </tr>
               <tr>
-                <td>Toplam Bakım Maliyeti</td>
+                <td>Total Maintenance Cost</td>
                 <td>{{ total | number }} TL</td>
               </tr>
 
@@ -204,7 +211,7 @@
                   class="btn btn-outline-primary text-center mt-2"
                   (click)="backCalc()"
                 >
-                  Hesaplamaya Geri Dönün
+                  Back to Calculation
                 </button>
               </div>
             </tbody>

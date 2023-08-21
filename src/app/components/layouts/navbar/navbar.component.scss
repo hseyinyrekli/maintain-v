@@ -64,6 +64,10 @@ ul li {
   a {
     color: #212529 !important;
   }
+  #target #login a:hover {
+    color: white !important;
+  }
+
   li button {
     color: #212529 !important;
   }
@@ -161,7 +165,7 @@ ul li {
 //DROPDOWN SOURCES
 .dropbtn3 {
   background-color: transparent;
-  color: white;
+  color: white !important;
   border: none;
   cursor: pointer;
 }
@@ -221,5 +225,35 @@ ul li {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.navbarSVG {
+  fill: #1a49b3;
+}
+
+.notSvg {
+  fill: #1a49b3;
+}
+@media (max-width: 980px) {
+  #navbar {
+    background-color: #ffff !important;
+  }
+  .nav-link {
+    color: #212529 !important;
+  }
+  .active {
+    color: #1a49b3 !important;
+  }
+  .dropbtn3 {
+    color: #212529 !important;
+  }
+  .dropdown3 {
+    display: none;
+  }
+}
+@media (min-width: 980px) {
+  .active {
+    color: #ffff !important;
   }
 }

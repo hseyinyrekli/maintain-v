@@ -1,4 +1,5 @@
 .container {
+  padding: 2em;
   margin-top: 12em;
   .card {
     border: none;
@@ -8,6 +9,7 @@
   }
   .card:hover {
     transform: scale(1.04);
+    background-color: #f4f5f6 !important;
   }
 }
 .icons {
