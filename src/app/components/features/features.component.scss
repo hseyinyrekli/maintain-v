@@ -31,3 +31,9 @@
   height: 25vh;
   padding: 10px;
 }
+
+@media (min-width: 980px) {
+  .description {
+    height: 35vh !important;
+  }
+}

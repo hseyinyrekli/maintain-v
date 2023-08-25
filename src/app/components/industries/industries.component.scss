@@ -30,6 +30,7 @@ a {
 }
 
 .card a:hover {
+  cursor: pointer;
   background-color: #f8f9fa;
 }
 @media (max-width: 980px) {

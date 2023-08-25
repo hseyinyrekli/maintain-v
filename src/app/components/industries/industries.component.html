@@ -2,7 +2,7 @@
   <div class="row">
     <div id="leftSide" class="col-lg-3 col-md-3 col-3">
       <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-        <a href="">
+        <a (click)="scrollToSection('manufacturing')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -16,7 +16,7 @@
           Manufacturing</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('energy')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -30,7 +30,7 @@
           Energy</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('government')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -44,7 +44,7 @@
           Government Organizations</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('education')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -58,7 +58,7 @@
           Education</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('healthcare')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -72,7 +72,7 @@
           Healthcare</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('property')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -86,7 +86,7 @@
           Property Management</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('hospitality')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -100,7 +100,7 @@
           Hospitality</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('recreation')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -114,7 +114,7 @@
           Recreation</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('transportation')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -129,7 +129,7 @@
           Transportation</a
         >
 
-        <a href="">
+        <a (click)="scrollToSection('aerospace')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
@@ -145,7 +145,7 @@
       </div>
     </div>
     <div class="col-lg-9 col-md-12 col-12" style="padding: 5em">
-      <div class="manufacturing">
+      <div id="energy" class="manufacturing">
         <h1>MANUFACTURING</h1>
         <p>
           The core of an economy is the manufacturing industry. Almost all
@@ -160,7 +160,7 @@
           <li>Make efficient decisions.</li>
         </ul>
       </div>
-      <div class="energy">
+      <div id="government" class="energy">
         <h1>ENERGY</h1>
         <p>
           An effective maintenance management helps limit power surges and
@@ -190,7 +190,7 @@
           </li>
         </ul>
       </div>
-      <div class="government">
+      <div id="education" class="government">
         <h1>GOVERNMENT ORGANIZATIONS</h1>
         <p>
           Government organizations can benefit from maintenance management
@@ -206,7 +206,7 @@
           <li>Efficient planning for the future</li>
         </ul>
       </div>
-      <div class="education">
+      <div id="healthcare" class="education">
         <h1>EDUCATION</h1>
         <p>
           In any training organization, a well-defined CMMS system can help
@@ -225,7 +225,7 @@
           <li>Efficiently monitor, compile and report all requests.</li>
         </ul>
       </div>
-      <div class="healthcare">
+      <div id="property" class="healthcare">
         <h1>HEALTHCARE</h1>
         <p>
           Health institutions and clinical engineering/biomedical departments
@@ -241,7 +241,7 @@
           <li>Multiple contract and warranty management.</li>
         </ul>
       </div>
-      <div class="property">
+      <div id="hospitality" class="property">
         <h1>PROPERTY MANAGEMENT</h1>
         <p>
           Property management is widely spread and is a leading industry
@@ -264,7 +264,7 @@
           </li>
         </ul>
       </div>
-      <div class="hospitally">
+      <div id="recreation" class="hospitally">
         <h1>HOSPITALLY</h1>
         <p>
           Travel and accommodation are some of the services we use occasionally.
@@ -283,7 +283,7 @@
           </li>
         </ul>
       </div>
-      <div class="recreation">
+      <div id="transportation" class="recreation">
         <h1>RECREATION</h1>
         <p>
           The city's parks and recreation department has the challenging task of
@@ -306,7 +306,7 @@
           </li>
         </ul>
       </div>
-      <div class="transportation">
+      <div id="aerospace" class="transportation">
         <h1>TRANSPORTATION</h1>
         <p>
           Periodic maintenance schedule can be created for all vehicles in an
@@ -329,7 +329,7 @@
         </ul>
       </div>
       <div class="aerospace">
-        <h1 id="aerospace">AEROSPACE</h1>
+        <h1>AEROSPACE</h1>
         <p>
           A CMMS software provides access to all necessary information for
           equipment maintenance. Maintenance teams can view information about

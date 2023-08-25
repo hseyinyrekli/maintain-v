@@ -67,11 +67,7 @@ h1 {
   font-size: 0.8em;
 }
 #card1 button {
-  margin-top: 0.7em;
   width: 100%;
-}
-#card1 .buttons {
-  margin-top: 3rem;
 }
 
 #images .card {
@@ -142,5 +138,13 @@ h1 {
   }
   .store div span {
     font-size: 1em !important;
+  }
+}
+@media (max-width: 600px) {
+  #card1 {
+    width: 55% !important;
+  }
+  h2 {
+    font-size: 1.2em !important;
   }
 }

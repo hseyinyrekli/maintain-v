@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogDetailComponent } from './components/blogs/blog-detail/blog-detail.component';
 import { BlogsPipe } from './components/blogs/blogs.pipe';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { BlogsPipe } from './components/blogs/blogs.pipe';
     CenterComponent,
     BlogDetailComponent,
     BlogsPipe,
+    SignUpComponent,
   ],
   imports: [
     HttpClientModule,

@@ -60,8 +60,9 @@ a {
     margin-top: 2px !important;
     float: right;
   }
+  margin: auto;
   margin-top: 2%;
-  width: 100%;
+  width: 90%;
   height: 5vh;
   border-radius: 5px;
   border: none;
@@ -73,6 +74,12 @@ a {
   margin-right: 1em;
   margin-top: 1em;
 }
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
 
 @media (max-width: 600px) {
   .content {
@@ -80,14 +87,14 @@ a {
   }
   #card {
     height: 95vh !important;
-    margin-top: 3.8%;
-    background: linear-gradient(to bottom, #cde4ff 50%, #ffff 50%);
+    margin-top: 3.9% !important;
+    background: #ffff !important;
   }
+
   .loginPhoto {
-    margin-top: 20% !important;
+    display: none;
   }
   .logoPhoto {
-    margin-top: 22% !important;
     width: 40%;
     margin-left: 31%;
   }
@@ -96,6 +103,9 @@ a {
   }
   .back {
     color: white;
+  }
+  .back svg {
+    fill: white !important;
   }
 }
 
@@ -106,12 +116,10 @@ a {
   #card {
     height: 95vh !important;
     margin-top: 2.6%;
-    background: linear-gradient(to bottom, #cde4ff 50%, #ffff 50%);
+    background: #ffff !important;
   }
   .loginPhoto {
-    width: 90%;
-    margin-left: 6%;
-    margin-top: 0;
+    display: none;
   }
   .logoPhoto {
     margin-top: 6%;
@@ -123,17 +131,5 @@ a {
   }
   .back {
     color: white;
-  }
-}
-.show {
-  display: block;
-  transition: 0.5s;
-}
-#backLog {
-  cursor: pointer;
-}
-@media (max-width: 600px) {
-  .back svg {
-    fill: white !important;
   }
 }

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "src": "assets/completed.png",
+    "src": "assets/blog/completed.png",
     "name": "Work Order Management",
     "title": "Work orders help a company monitor and manage its maintenance work.",
 
@@ -101,7 +101,7 @@
   },
   {
     "id": 2,
-    "src": "assets/clipboard.png",
+    "src": "assets/blog/clipboard.png",
     "name": "Managing Work Orders",
     "title": "Here are a few benefits to consider when exploring strategies to effectively manage and organize work orders:",
     "slug": "managing-work-orders",
@@ -206,7 +206,7 @@
   },
   {
     "id": 3,
-    "src": "assets/bombs.png",
+    "src": "assets/blog/bombs.png",
     "name": "Using a CMMS",
     "title": "CMMS is a comprehensive system for managing work orders that automates the entire maintenance process.",
     "slug": "using-cmms",

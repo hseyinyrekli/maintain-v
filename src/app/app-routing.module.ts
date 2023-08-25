@@ -13,6 +13,7 @@ import { SupportComponent } from './components/support/support.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { CostComponent } from './components/cost/cost.component';
 import { BlogDetailComponent } from './components/blogs/blog-detail/blog-detail.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
 ];
 
