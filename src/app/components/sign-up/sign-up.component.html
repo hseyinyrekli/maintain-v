@@ -29,7 +29,11 @@
       <div class="col-lg-6 col-12">
         <img class="logoPhoto" src="assets/logo/maintainv-logo.svg" alt="" />
         <hr class="hr-text" data-content="SIGN UP" />
-        <form [formGroup]="signupForm" class="p-3 row">
+        <form
+          [formGroup]="signupForm"
+          (ngSubmit)="validateForm()"
+          class="p-3 row"
+        >
           <div class="form-group p-2 col-lg-6 col-12">
             <input
               type="name"
@@ -153,7 +157,7 @@
             </div>
           </div>
           <div class="form-group p-2 col-6">
-            <div class="input-group">
+            <div id="eyes" class="input-group">
               <input
                 [type]="passwordInputType"
                 class="form-control"
@@ -209,7 +213,7 @@
             </div>
           </div>
           <div class="form-group p-2 col-6">
-            <div class="input-group">
+            <div id="eyes" class="input-group">
               <input
                 [type]="passwordInputType2"
                 class="form-control"
@@ -261,7 +265,7 @@
             </div>
           </div>
 
-          <button class="login" (click)="submitted = true">
+          <button class="login" [disabled]="isButtonDisabled">
             SIGN UP
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -277,8 +281,8 @@
               />
             </svg>
           </button>
-          <div *ngIf="submitted && signupForm.invalid" class="error-message">
-            Henüz formu doldurmadınız!
+          <div *ngIf="showMessage" class="success-messagef">
+            Your registration has been done successfully.
           </div>
         </form>
       </div>

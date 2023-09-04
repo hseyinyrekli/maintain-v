@@ -50,20 +50,14 @@ export class NavbarComponent implements OnInit {
       return 'bg-color';
     }
   }
+  closeMenu() {
+    const element = document.getElementById(
+      'navbarSupportedContent'
+    ) as HTMLElement;
 
-  startRotation() {
-    this.isRotating = true;
-  }
-  stopRotation() {
-    this.isRotating = false;
-  }
-
-  startRotation2() {
-    this.isRotating2 = true;
-  }
-
-  stopRotation2() {
-    this.isRotating2 = false;
+    if (element) {
+      element.classList.remove('show');
+    }
   }
 
   startRotation3() {

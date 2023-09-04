@@ -24,7 +24,7 @@ a {
 .logoPhoto {
   width: 50%;
   margin-left: 25%;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .hr-text {
@@ -80,8 +80,17 @@ a {
   margin-left: 5px;
   margin-top: 5px;
 }
+.success-message {
+  color: green;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
 
 @media (max-width: 600px) {
+  .error-message {
+    font-size: 10px;
+  }
   .content {
     background: linear-gradient(to bottom, #06044d 50%, #cde4ff 50%);
   }
@@ -132,4 +141,13 @@ a {
   .back {
     color: white;
   }
+}
+#eyes button {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #dee2e6;
+  border-left: none !important;
+}
+#eyes input {
+  border: 1px solid #dee2e6;
+  border-right: none !important;
 }

@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignUpComponent implements OnInit {
   signupForm!: any;
   submitted = false;
+  isButtonDisabled = true;
+  showMessage: boolean = false;
   constructor(
     private location: Location,
     private router: Router,
@@ -58,6 +60,22 @@ export class SignUpComponent implements OnInit {
         validators: this.passwordMatchValidator.bind(this),
       }
     );
+    this.signupForm.valueChanges.subscribe(() => {
+      this.isButtonDisabled = this.signupForm.invalid;
+    });
+  }
+
+  validateForm() {
+    if (this.signupForm.valid) {
+      this.showMessage = true;
+      this.signupForm.reset();
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 2000);
+    }
+  }
+  onSubmit() {
+    this.submitted = true;
   }
 
   private passwordMatchValidator(formGroup: FormGroup) {
