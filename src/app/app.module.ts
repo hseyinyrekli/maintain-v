@@ -24,6 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlogDetailComponent } from './components/blogs/blog-detail/blog-detail.component';
 import { BlogsPipe } from './components/blogs/blogs.pipe';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { MessagesModule } from 'primeng/messages';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 @NgModule({
   declarations: [
@@ -54,8 +59,12 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    MessagesModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    NgxIntlTelInputModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

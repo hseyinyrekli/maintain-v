@@ -67,37 +67,24 @@ a {
   border-radius: 5px;
   border: none;
   color: white;
-  background-color: #06044d;
+  background-color: #0066ff;
 }
 .back {
   float: right !important;
   margin-right: 1em;
   margin-top: 1em;
 }
-.error-message {
-  color: red;
-  font-size: 12px;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-.success-message {
-  color: green;
-  font-size: 12px;
-  margin-left: 5px;
-  margin-top: 5px;
+.text-danger {
+  font-size: 13px;
 }
 
-@media (max-width: 600px) {
-  .error-message {
-    font-size: 10px;
+@media (max-width: 512px) {
+  #card {
+    margin-top: 11% !important;
   }
+
   .content {
     background: linear-gradient(to bottom, #06044d 50%, #cde4ff 50%);
-  }
-  #card {
-    height: 95vh !important;
-    margin-top: 3.9% !important;
-    background: #ffff !important;
   }
 
   .loginPhoto {
@@ -123,8 +110,8 @@ a {
     background: linear-gradient(to bottom, #06044d 50%, #cde4ff 50%);
   }
   #card {
-    height: 95vh !important;
-    margin-top: 2.6%;
+    height: 85vh !important;
+    margin-top: 7%;
     background: #ffff !important;
   }
   .loginPhoto {
@@ -143,6 +130,10 @@ a {
   }
 }
 #eyes button {
+  align-items: center;
+  justify-content: center;
+  height: 2.4em;
+  background: none;
   border-radius: 0px 5px 5px 0px;
   border: 1px solid #dee2e6;
   border-left: none !important;

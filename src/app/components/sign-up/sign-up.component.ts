@@ -1,7 +1,25 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
+import * as intlTelInput from 'intl-tel-input';
+import { HttpClient } from '@angular/common/http';
+import { SignupService } from 'src/app/components/core/services/signup.service';
+import * as CryptoJS from 'crypto-js';
+import { NotificationService } from '../core/services/notification.service';
+import { passwordValidator } from './password-validator 2';
+import {
+  CountryISO,
+  PhoneNumberFormat,
+  SearchCountryField,
+} from 'ngx-intl-tel-input';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,77 +28,110 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
   signupForm!: any;
-  submitted = false;
+  showError = false;
   isButtonDisabled = true;
   showMessage: boolean = false;
+  errorMap = [
+    'Invalid number',
+    'Invalid country code',
+    'Too short',
+    'Too long',
+    'Invalid number',
+  ];
+  iti: any;
+  inputElement: any;
+  phoneValiteMessage = '';
+  userTotal = 0;
+  private key = 'vida-smart';
+  SearchCountryField = SearchCountryField;
+  selectedCountryISO = CountryISO.UnitedStates;
+  PhoneNumberFormat = PhoneNumberFormat;
   constructor(
+    private notificationService: NotificationService,
     private location: Location,
-    private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private signupService: SignupService
   ) {}
 
   goBack() {
     this.location.back();
   }
-
   ngOnInit() {
-    this.signupForm = this.formBuilder.group(
-      {
-        firstName: [
-          '',
-          [
-            Validators.required,
-            Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/),
-          ],
-        ],
-        lastName: [
-          '',
-          [
-            Validators.required,
-            Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/),
-          ],
-        ],
-        title: ['', Validators.required],
-        company: ['', Validators.required],
-        phoneNumber: [
-          '',
-          [Validators.required, Validators.pattern(/^\d{10}$/)],
-        ],
-        email: [
-          '',
-          [
-            Validators.required,
-            Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
-          ],
-        ],
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ['', Validators.required],
-      },
-      {
-        validators: this.passwordMatchValidator.bind(this),
-      }
-    );
+    this.inputElement = document.querySelector('#phone');
+    if (this.inputElement) {
+      this.iti = intlTelInput(this.inputElement, {
+        initialCountry: 'us',
+        separateDialCode: true,
+        placeholderNumberType: 'MOBILE',
+        utilsScript:
+          'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+      });
+    }
+
+    this.signupForm = this.formBuilder.group({
+      firstName: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/),
+      ]),
+      lastName: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/),
+      ]),
+      userName: [''],
+      licenseCode: [''],
+      title: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/),
+      ]),
+      company: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/),
+      ]),
+      phoneNumber: new FormControl('', [Validators.required]),
+      emailAddress: new FormControl('', [
+        Validators.required,
+        Validators.email,
+      ]),
+      password: new FormControl('', [Validators.required, passwordValidator]),
+      passwordConfirm: new FormControl('', [
+        Validators.required,
+        this.matchValidator('password'),
+      ]),
+
+      type: ['regular'],
+    });
+
     this.signupForm.valueChanges.subscribe(() => {
       this.isButtonDisabled = this.signupForm.invalid;
     });
   }
-
-  validateForm() {
-    if (this.signupForm.valid) {
-      this.showMessage = true;
-      this.signupForm.reset();
-      setTimeout(() => {
-        this.showMessage = false;
-      }, 2000);
-    }
+  matchValidator(matchTo: string, reverse?: boolean): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (control.parent && reverse) {
+        const c = (control.parent?.controls as any)[matchTo] as AbstractControl;
+        if (c) {
+          c.updateValueAndValidity();
+        }
+        return null;
+      }
+      return !!control.parent &&
+        !!control.parent.value &&
+        control.value === (control.parent?.controls as any)[matchTo].value
+        ? null
+        : { matching: true };
+    };
   }
-  onSubmit() {
-    this.submitted = true;
+  getError() {
+    return this.signupForm.get('password')?.getError('passwordStrength');
+  }
+  get f() {
+    return this.signupForm.controls;
   }
 
   private passwordMatchValidator(formGroup: FormGroup) {
     const passwordControl = formGroup.get('password');
-    const confirmPasswordControl = formGroup.get('confirmPassword');
+    const confirmPasswordControl = formGroup.get('passwordConfirm');
 
     if (passwordControl && confirmPasswordControl) {
       if (passwordControl.value !== confirmPasswordControl.value) {
@@ -90,6 +141,7 @@ export class SignUpComponent implements OnInit {
       }
     }
   }
+  //EYES
 
   @ViewChild('closedEye') closedEye!: ElementRef;
   @ViewChild('openEye') openEye!: ElementRef;
@@ -125,5 +177,72 @@ export class SignUpComponent implements OnInit {
       this.closedEye2.nativeElement.style.display = 'inline-block';
       this.openEye2.nativeElement.style.display = 'none';
     }
+  }
+  //SUBMIT
+
+  async signUp() {
+    if (this.f['emailAddress'].value) {
+      this.f['userName'].setValue(this.f['emailAddress'].value);
+    }
+    await this.getRandomLicanceCode();
+    if (this.signupForm.valid && this.f['licenseCode'].value) {
+      this.signupService.signUp(this.signupForm.value).subscribe(
+        (data: any) => {
+          this.notificationService.showSuccess(
+            'Success',
+            'Signed up successfully.'
+          );
+          this.signupForm.reset();
+        },
+        (error) => {
+          console.log(error, 'ns dnm');
+          let filter = `where[0][type]=equals&where[0][attribute]=emailAddress&where[0][value]=${this.f['emailAddress'].value}`;
+          this.signupService.getUserForRegister(filter).subscribe((data) => {
+            console.log(data);
+            if (data.total > 0) {
+              this.notificationService.showError(
+                'Error',
+                'There is an account for this email.'
+              );
+            } else {
+              this.notificationService.showError('Error', 'Failed to sign up.');
+            }
+          });
+          this.signupForm.reset();
+        }
+      );
+    }
+  }
+  async getRandomLicanceCode() {
+    const encoded = this.setEnc(this.randomStr(10));
+    await this.getUserList(encoded);
+    if (this.userTotal > 0) {
+      this.getRandomLicanceCode();
+      return;
+    } else {
+      this.f['licenseCode'].setValue(encoded);
+      return;
+    }
+  }
+  getUserList(code?: any) {
+    let filter = `where[0][type]=equals&where[0][attribute]=licenseCode&where[0][value]=${code}`;
+    this.signupService.getUserForRegister(filter).subscribe((data) => {
+      this.userTotal = data.total;
+    });
+  }
+  randomStr = (len: number) => {
+    let result = '';
+    const characters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < len) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  };
+  setEnc(value: any) {
+    return CryptoJS.AES.encrypt(value, this.key).toString();
   }
 }

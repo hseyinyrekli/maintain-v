@@ -27,13 +27,11 @@
       </div>
 
       <div class="col-lg-6 col-12">
-        <img class="logoPhoto" src="assets/logo/maintainv-logo.svg" alt="" />
+        <a routerLink="">
+          <img class="logoPhoto" src="assets/logo/maintainv-logo.svg" alt=""
+        /></a>
         <hr class="hr-text" data-content="SIGN UP" />
-        <form
-          [formGroup]="signupForm"
-          (ngSubmit)="validateForm()"
-          class="p-3 row"
-        >
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="p-3 row">
           <div class="form-group p-2 col-lg-6 col-12">
             <input
               type="name"
@@ -41,22 +39,12 @@
               placeholder="First Name"
               formControlName="firstName"
             />
-            <div
-              *ngIf="
-                signupForm.get('firstName').invalid &&
-                signupForm.get('firstName').touched
-              "
-              class="error-message"
+            <span
+              *ngIf="f['firstName'].errors && f['firstName'].errors['pattern']"
+              class="text-danger d-flex justify-content-end"
             >
-              <ng-container
-                *ngIf="signupForm.get('firstName').errors?.required"
-              >
-                First Name field cannot be left blank !
-              </ng-container>
-              <ng-container *ngIf="signupForm.get('firstName').errors?.pattern">
-                Please enter a valid First Name !
-              </ng-container>
-            </div>
+              Please use only uppercase or lowercase.</span
+            >
           </div>
           <div class="form-group p-2 col-lg-6 col-12">
             <input
@@ -65,20 +53,12 @@
               placeholder="Last Name"
               formControlName="lastName"
             />
-            <div
-              *ngIf="
-                signupForm.get('lastName').invalid &&
-                signupForm.get('lastName').touched
-              "
-              class="error-message"
+            <span
+              *ngIf="f['lastName'].errors && f['lastName'].errors['pattern']"
+              class="text-danger d-flex justify-content-end"
             >
-              <ng-container *ngIf="signupForm.get('lastName').errors?.required">
-                Last Name field cannot be left blank !
-              </ng-container>
-              <ng-container *ngIf="signupForm.get('lastName').errors?.pattern">
-                Please enter a valid Last Name !
-              </ng-container>
-            </div>
+              Please use only uppercase or lowercase.</span
+            >
           </div>
 
           <div class="form-group p-2 col-lg-6 col-12">
@@ -88,6 +68,12 @@
               placeholder="Title"
               formControlName="title"
             />
+            <span
+              *ngIf="f['title'].errors && f['title'].errors['pattern']"
+              class="text-danger d-flex justify-content-end"
+            >
+              Please use only uppercase or lowercase.</span
+            >
           </div>
           <div class="form-group p-2 col-lg-6 col-12">
             <input
@@ -96,65 +82,51 @@
               placeholder="Company"
               formControlName="company"
             />
-            <div
-              *ngIf="
-                signupForm.get('company').invalid &&
-                signupForm.get('company').touched
-              "
-              class="error-message"
+            <span
+              *ngIf="f['company'].errors && f['company'].errors['pattern']"
+              class="text-danger d-flex justify-content-end"
             >
-              <ng-container *ngIf="signupForm.get('company').errors?.required">
-                Company field is not left blank!
-              </ng-container>
+              Please use only uppercase or lowercase.</span
+            >
+          </div>
+          <div class="form-group p-2 col-6">
+            <div class="wrapper">
+              <ngx-intl-tel-input
+                [cssClass]="'custom form-control'"
+                [enablePlaceholder]="true"
+                [searchCountryFlag]="true"
+                [selectedCountryISO]="selectedCountryISO"
+                [maxLength]="15"
+                [phoneValidation]="true"
+                [separateDialCode]="true"
+                [numberFormat]="PhoneNumberFormat.National"
+                name="phone"
+                formControlName="phoneNumber"
+              >
+              </ngx-intl-tel-input>
+              <span
+                *ngIf="f['phoneNumber'].hasError('validatePhoneNumber')"
+                class="text-danger d-flex justify-content-end"
+              >
+                Please use a valid telephone.</span
+              >
             </div>
           </div>
-          <div class="form-group p-2 col-lg-6 col-12">
-            <input
-              type="tel"
-              class="form-control"
-              placeholder="Phone"
-              formControlName="phoneNumber"
-            />
-            <div
-              *ngIf="
-                signupForm.get('phoneNumber').invalid &&
-                signupForm.get('phoneNumber').touched
-              "
-              class="error-message"
-            >
-              <ng-container
-                *ngIf="signupForm.get('phoneNumber').errors?.required"
-              >
-                Phone field is not left blank!
-              </ng-container>
-              <ng-container
-                *ngIf="signupForm.get('phoneNumber').errors?.pattern"
-              >
-                Please enter a valid number!
-              </ng-container>
-            </div>
-          </div>
-          <div class="form-group p-2 col-lg-6 col-12">
+          <div class="form-group p-2 col-6">
             <input
               type="email"
               class="form-control"
               placeholder="E-Mail"
-              formControlName="email"
+              formControlName="emailAddress"
             />
-            <div
+            <span
               *ngIf="
-                signupForm.get('email').invalid &&
-                signupForm.get('email').touched
+                f['emailAddress'].errors && f['emailAddress'].errors['email']
               "
-              class="error-message"
+              class="text-danger d-flex justify-content-end"
             >
-              <ng-container *ngIf="signupForm.get('email').errors?.required">
-                Email field is not left blank!
-              </ng-container>
-              <ng-container *ngIf="signupForm.get('email').errors?.pattern">
-                Please enter a valid email!
-              </ng-container>
-            </div>
+              Please use a valid email.</span
+            >
           </div>
           <div class="form-group p-2 col-6">
             <div id="eyes" class="input-group">
@@ -166,11 +138,7 @@
                 aria-describedby="basic-addon2"
               />
               <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  (click)="togglePasswordVisibility()"
-                >
+                <button type="button" (click)="togglePasswordVisibility()">
                   <svg
                     #closedEye
                     xmlns="http://www.w3.org/2000/svg"
@@ -194,22 +162,12 @@
                   </svg>
                 </button>
               </div>
-            </div>
-            <div
-              *ngIf="
-                signupForm.get('password').invalid &&
-                signupForm.get('password').touched
-              "
-              class="error-message"
-            >
-              <ng-container *ngIf="signupForm.get('password').errors?.required">
-                Password field is required!
-              </ng-container>
-              <ng-container
-                *ngIf="signupForm.get('password').errors?.minlength"
+              <span
+                *ngIf="f['password'].hasError('passwordStrength')"
+                class="text-danger d-flex justify-content-end"
               >
-                Password must be at least 6 characters long!
-              </ng-container>
+                {{ getError() }}</span
+              >
             </div>
           </div>
           <div class="form-group p-2 col-6">
@@ -218,15 +176,11 @@
                 [type]="passwordInputType2"
                 class="form-control"
                 placeholder="Password Confirm"
-                formControlName="confirmPassword"
+                formControlName="passwordConfirm"
                 aria-describedby="basic-addon2"
               />
               <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  (click)="togglePasswordVisibility2()"
-                >
+                <button type="button" (click)="togglePasswordVisibility2()">
                   <svg
                     #closedEye2
                     xmlns="http://www.w3.org/2000/svg"
@@ -250,18 +204,12 @@
                   </svg>
                 </button>
               </div>
-            </div>
-
-            <div
-              *ngIf="
-                signupForm
-                  .get('confirmPassword')
-                  .hasError('passwordMismatch') &&
-                signupForm.get('confirmPassword').touched
-              "
-              class="error-message"
-            >
-              Passwords do not match!
+              <span
+                *ngIf="f['passwordConfirm'].hasError('matching')"
+                class="text-danger d-flex justify-content-end"
+              >
+                Passwords does not match.</span
+              >
             </div>
           </div>
 
@@ -281,7 +229,7 @@
               />
             </svg>
           </button>
-          <div *ngIf="showMessage" class="success-messagef">
+          <div *ngIf="showMessage" class="success-message">
             Your registration has been done successfully.
           </div>
         </form>
