@@ -7,7 +7,6 @@ import { IndustriesComponent } from './components/industries/industries.componen
 import { FeaturesComponent } from './components/features/features.component';
 import { ReferencesComponent } from './components/references/references.component';
 import { PricingComponent } from './components/pricing/pricing.component';
-import { SourcesComponent } from './components/sources/sources.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { NavbarComponent } from './components/layouts/navbar/navbar.component';
@@ -29,8 +28,8 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { AboutComponent } from './components/about/about.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { AuthComponent } from './components/auth/auth.component';
     FeaturesComponent,
     ReferencesComponent,
     PricingComponent,
-    SourcesComponent,
     LoginComponent,
     LayoutsComponent,
     NavbarComponent,
@@ -52,8 +50,8 @@ import { AuthComponent } from './components/auth/auth.component';
     BlogDetailComponent,
     BlogsPipe,
     SignUpComponent,
+    AboutComponent,
     ForgotPasswordComponent,
-    AuthComponent,
   ],
   imports: [
     HttpClientModule,

@@ -4,7 +4,6 @@ import { IndustriesComponent } from './components/industries/industries.componen
 import { HomeComponent } from './components/home/home.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { ReferencesComponent } from './components/references/references.component';
-import { SourcesComponent } from './components/sources/sources.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { LoginComponent } from './components/login/login.component';
@@ -14,6 +13,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { CostComponent } from './components/cost/cost.component';
 import { BlogDetailComponent } from './components/blogs/blog-detail/blog-detail.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AboutComponent } from './components/about/about.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
         path: 'cost',
         component: CostComponent,
       },
+      {
+        path: 'about',
+        component: AboutComponent,
+      },
     ],
   },
   {
@@ -70,6 +75,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignUpComponent,
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
   },
 ];
 
