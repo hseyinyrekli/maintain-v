@@ -29,6 +29,8 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     BlogDetailComponent,
     BlogsPipe,
     SignUpComponent,
+    ForgotPasswordComponent,
+    AuthComponent,
   ],
   imports: [
     HttpClientModule,

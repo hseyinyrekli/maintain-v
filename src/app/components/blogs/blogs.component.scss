@@ -96,7 +96,7 @@
   font-weight: 900;
   color: #071952;
   padding: 5px;
-  border: 1px solid #071952;
+  border: 1px solid #0066ff;
 }
 
 .container .card .face.face2 .content a:hover {
@@ -129,7 +129,7 @@
 .search .search-input {
   padding: 0 10px;
   width: 100%;
-  caret-color: #004fbc;
+  caret-color: #0066ff;
   font-size: 19px;
   font-weight: 300;
   transition: width 0.4s linear;
@@ -169,7 +169,7 @@
 @media (max-width: 600px) {
   .container {
     margin: 0 !important;
-    padding-left: 5em !important;
+    padding-left: 4em !important;
   }
   #title h1 {
     font-size: 5em !important;

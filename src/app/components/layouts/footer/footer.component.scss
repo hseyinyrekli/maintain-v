@@ -2,6 +2,9 @@ a {
   color: white;
   text-decoration: none;
 }
+p {
+  color: white;
+}
 .footer {
   display: block;
   background-color: #06044d;
@@ -13,33 +16,59 @@ li {
 h5 {
   color: white;
   font-weight: bold;
+  font-family: "Keep Calm", sans-serif;
 }
 #list {
-  padding: 2em;
+  padding: 1em;
+  li {
+    padding-bottom: 3px;
+    font-size: 14px;
+  }
 }
 .border {
   border-top: 2px solid white;
-  margin: auto;
+  margin-bottom: 10px;
   width: 50%;
 }
-#links {
-  padding-bottom: 2em;
+.border2 {
+  margin-top: 1em;
+  border-top: 2px solid white;
 }
-#links li {
-  margin-left: 10%;
-  padding: 1em;
-  border: 1px solid white;
-}
-#links li:hover {
-  cursor: pointer;
-  background-color: #212529 !important;
-  opacity: 0.8;
-}
+
 span {
   padding: 1em;
 }
-@media (max-width: 600px) {
-  #image {
-    padding-bottom: 3em;
+
+#links svg {
+  margin-right: 0.5em;
+}
+.media li {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 1em;
+}
+#image {
+  margin-top: 6em;
+}
+#schedule {
+  transition: 0.6s;
+}
+#schedule:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  #list {
+    text-align: center;
+    h5 {
+      margin-top: 1em;
+    }
+  }
+  #image img {
+    margin-left: 25%;
+  }
+  .border {
+    margin-bottom: 1em !important;
+    margin: auto;
   }
 }
