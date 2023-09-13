@@ -10,9 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 import * as intlTelInput from 'intl-tel-input';
-import { HttpClient } from '@angular/common/http';
 import { SignupService } from 'src/app/components/core/services/signup.service';
-import * as CryptoJS from 'crypto-js';
 import { NotificationService } from '../core/services/notification.service';
 import { passwordValidator } from './password-validator 2';
 import {
@@ -31,13 +29,7 @@ export class SignUpComponent implements OnInit {
   showError = false;
   isButtonDisabled = true;
   showMessage: boolean = false;
-  errorMap = [
-    'Invalid number',
-    'Invalid country code',
-    'Too short',
-    'Too long',
-    'Invalid number',
-  ];
+
   iti: any;
   inputElement: any;
   phoneValiteMessage = '';
@@ -50,7 +42,6 @@ export class SignUpComponent implements OnInit {
     private notificationService: NotificationService,
     private location: Location,
     private formBuilder: FormBuilder,
-    private http: HttpClient,
     private signupService: SignupService
   ) {}
 
@@ -195,7 +186,6 @@ export class SignUpComponent implements OnInit {
           this.signupForm.reset();
         },
         (error) => {
-          console.log(error, 'ns dnm');
           let filter = `where[0][type]=equals&where[0][attribute]=emailAddress&where[0][value]=${this.f['emailAddress'].value}`;
           this.signupService.getUserForRegister(filter).subscribe((data) => {
             console.log(data);
@@ -214,7 +204,7 @@ export class SignUpComponent implements OnInit {
     }
   }
   async getRandomLicanceCode() {
-    const encoded = this.setEnc(this.randomStr(10));
+    const encoded = this.randomStr(10);
     await this.getUserList(encoded);
     if (this.userTotal > 0) {
       this.getRandomLicanceCode();
@@ -232,8 +222,7 @@ export class SignUpComponent implements OnInit {
   }
   randomStr = (len: number) => {
     let result = '';
-    const characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const charactersLength = characters.length;
     let counter = 0;
     while (counter < len) {
@@ -242,7 +231,4 @@ export class SignUpComponent implements OnInit {
     }
     return result;
   };
-  setEnc(value: any) {
-    return CryptoJS.AES.encrypt(value, this.key).toString();
-  }
 }

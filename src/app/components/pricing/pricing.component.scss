@@ -127,3 +127,8 @@ ul {
 a {
   text-decoration: none;
 }
+@media (max-width: 600px) {
+  .mainTitle {
+    font-size: 0.7em;
+  }
+}

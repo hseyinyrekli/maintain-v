@@ -23,12 +23,19 @@
   <div id="card">
     <div class="row">
       <div class="col-lg-6 col-12">
-        <img class="loginPhoto" src="assets/login/loginScreen.png" alt="" />
+        <img
+          class="loginPhoto"
+          src="assets/login/loginScreen.png"
+          alt="Maintain Logo"
+        />
       </div>
 
       <div class="col-lg-6 col-12">
         <a routerLink="">
-          <img class="logoPhoto" src="assets/logo/maintainv-logo.svg" alt=""
+          <img
+            class="logoPhoto"
+            src="assets/logo/maintainv-logo.svg"
+            alt="Maintain Logo"
         /></a>
         <hr class="hr-text" data-content="SIGN UP" />
         <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="p-3 row">
@@ -229,9 +236,6 @@
               />
             </svg>
           </button>
-          <div *ngIf="showMessage" class="success-message">
-            Your registration has been done successfully.
-          </div>
         </form>
         <div class="text-center">
           <p class="text-muted">

@@ -144,10 +144,13 @@ h1 {
     width: 70% !important;
   }
   #images .card {
-    height: 20vh !important;
+    height: 30vh !important;
   }
   #images .card h4 {
     font-size: 1em;
+  }
+  #images .card img {
+    width: 50% !important;
   }
   h2 {
     font-size: 1.2em !important;
@@ -157,5 +160,8 @@ h1 {
   }
   .store {
     font-size: 12px !important;
+  }
+  .store div img {
+    width: 30px;
   }
 }

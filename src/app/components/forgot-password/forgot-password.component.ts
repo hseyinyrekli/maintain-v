@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NotificationService } from '../core/services/notification.service';
+
 import {
   FormBuilder,
   FormControl,
@@ -15,7 +17,10 @@ export class ForgotPasswordComponent {
   forgotForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private notificationService: NotificationService
+  ) {}
 
   ngOnInit() {
     this.forgotForm = this.formBuilder.group({
@@ -30,7 +35,10 @@ export class ForgotPasswordComponent {
     this.submitted = true;
 
     if (this.forgotForm.invalid) {
+      this.notificationService.showError('Error', 'Could not be sent !');
       return;
+    } else {
+      this.notificationService.showSuccess('Success', 'Sent successfully.');
     }
   }
 }

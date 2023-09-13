@@ -81,3 +81,9 @@ h5 {
     float: none;
   }
 }
+@media (max-width: 600px) {
+  #apps img {
+    margin-top: 1em !important;
+    float: none;
+  }
+}
