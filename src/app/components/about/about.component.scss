@@ -19,3 +19,12 @@
   margin-top: 2em;
   padding: 2em !important;
 }
+
+@media (max-width: 600px) {
+  .title {
+    margin-top: 1em !important;
+  }
+  #header {
+    padding: 2em !important;
+  }
+}

@@ -72,10 +72,10 @@
           </div>
           <div class="form-outline" style="width: 50%">
             <label class="form-label">
-              1 Machine 1 Hour Produced Commercial Value (TL)
+              1 Machine 1 Hour Produced Commercial Value ($)
             </label>
             <input
-              placeholder="₺"
+              placeholder="$"
               type="number"
               class="form-control"
               formControlName="hourlyCost"
@@ -86,11 +86,11 @@
           </div>
           <div class="form-outline" style="width: 50%">
             <label class="form-label">
-              Total Turnover of 1 Machine Park (TL)
+              Total Turnover of 1 Machine Park ($)
             </label>
             <input
               type="number"
-              placeholder="₺"
+              placeholder="$"
               class="form-control"
               formControlName="totalMoney"
               [ngClass]="{
@@ -99,9 +99,9 @@
             />
           </div>
           <div class="form-outline" style="width: 50%">
-            <label class="form-label"> Operator Salary Cost (TL) </label>
+            <label class="form-label"> Operator Salary Cost ($) </label>
             <input
-              placeholder="₺"
+              placeholder="$"
               type="number"
               class="form-control"
               formControlName="employeeCost"
@@ -148,10 +148,10 @@
           </div>
           <div class="form-outline" style="width: 50%">
             <label class="form-label">
-              1 Machine Monthly Electricity Expense (TL)
+              1 Machine Monthly Electricity Expense ($)
             </label>
             <input
-              placeholder="₺"
+              placeholder="$"
               type="number"
               class="form-control"
               formControlName="electricCost"
@@ -187,23 +187,23 @@
             <tbody>
               <tr>
                 <td>Monthly Downtime Cost</td>
-                <td>{{ mounthlyCost | number }} TL</td>
+                <td>{{ mounthlyCost | number }} $</td>
               </tr>
               <tr>
                 <td>Monthly Downtime Cost from Total Turnover</td>
-                <td>{{ mounthlyCostMoney | number }} TL</td>
+                <td>{{ mounthlyCostMoney | number }} $</td>
               </tr>
               <tr>
                 <td>Labor Cost of Monthly Downtime</td>
-                <td>{{ mounthlyLabor | number }} TL</td>
+                <td>{{ mounthlyLabor | number }} $</td>
               </tr>
               <tr>
                 <td>Electricity Cost of Maintenance</td>
-                <td>{{ electrictCostMoney | number }} TL</td>
+                <td>{{ electrictCostMoney | number }} $</td>
               </tr>
               <tr>
                 <td>Total Maintenance Cost</td>
-                <td>{{ total | number }} TL</td>
+                <td>{{ total | number }} $</td>
               </tr>
 
               <div class="col-6 p-3">

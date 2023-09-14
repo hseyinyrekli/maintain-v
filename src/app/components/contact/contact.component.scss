@@ -1,0 +1,63 @@
+.content {
+  position: relative;
+  background: linear-gradient(to top, #06044d 50%, #ffff 50%);
+  height: 100vh;
+  padding: 8em;
+  h3 {
+    font-family: "Keep Calm", sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.text-danger {
+  font-size: 13px;
+}
+
+#svg svg {
+  fill: #06044d;
+}
+#svg a:hover {
+  color: rgb(101, 101, 101);
+}
+#section {
+  margin-top: 4em;
+  border: none;
+  height: 50vh !important;
+  transition: 0.5s;
+  display: block;
+}
+#section:hover {
+  transform: scale(1.02);
+}
+#follow {
+  margin-top: -10em;
+}
+.media li {
+  display: inline-block;
+  margin-top: 1em;
+  padding-right: 2em;
+  svg {
+    color: white;
+  }
+  svg:hover {
+    color: rgb(196, 193, 193);
+  }
+}
+@media (max-width: 980px) {
+  .content {
+    margin-top: 4em;
+    padding: 3em !important;
+    height: 110vh !important;
+  }
+  #follow {
+    margin-top: 0 !important;
+    padding-bottom: 5em !important;
+  }
+}
+@media (max-width: 600) {
+  #follow {
+    margin-top: 0 !important;
+  }
+}

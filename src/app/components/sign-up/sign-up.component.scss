@@ -142,3 +142,9 @@ a {
   border: 1px solid #dee2e6;
   border-right: none !important;
 }
+.spinner {
+  position: absolute;
+  left: 46%;
+  top: 35%;
+  z-index: 1000;
+}

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndustriesComponent } from './components/industries/industries.component';
 import { HomeComponent } from './components/home/home.component';
 import { FeaturesComponent } from './components/features/features.component';
-import { ReferencesComponent } from './components/references/references.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,6 +14,7 @@ import { BlogDetailComponent } from './components/blogs/blog-detail/blog-detail.
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutComponent } from './components/about/about.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -32,10 +32,6 @@ const routes: Routes = [
       {
         path: 'features',
         component: FeaturesComponent,
-      },
-      {
-        path: 'references',
-        component: ReferencesComponent,
       },
 
       {
@@ -66,6 +62,10 @@ const routes: Routes = [
         path: 'about',
         component: AboutComponent,
       },
+      {
+        path: 'contact',
+        component: ContactComponent,
+      },
     ],
   },
   {
@@ -86,6 +86,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'top',
+      useHash: false,
     }),
   ],
   exports: [RouterModule],

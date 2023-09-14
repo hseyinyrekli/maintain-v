@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndustriesComponent } from './components/industries/industries.component';
 import { FeaturesComponent } from './components/features/features.component';
-import { ReferencesComponent } from './components/references/references.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
@@ -30,13 +29,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { AboutComponent } from './components/about/about.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-
+import { BlockUIModule } from 'primeng/blockui';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ContactComponent } from './components/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
     IndustriesComponent,
     FeaturesComponent,
-    ReferencesComponent,
     PricingComponent,
     LoginComponent,
     LayoutsComponent,
@@ -52,6 +52,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     SignUpComponent,
     AboutComponent,
     ForgotPasswordComponent,
+    ContactComponent,
   ],
   imports: [
     HttpClientModule,
@@ -65,6 +66,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     ToastModule,
     BrowserAnimationsModule,
     NgxIntlTelInputModule,
+    ProgressSpinnerModule,
+    BlockUIModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

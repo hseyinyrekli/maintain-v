@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" #pnl>
   <span class="back">
     <a (click)="goBack()">
       <svg
@@ -249,3 +249,9 @@
     </div>
   </div>
 </div>
+<div class="spinner1" *ngIf="blockedPanel">
+  <p-progressSpinner styleClass="spinner"></p-progressSpinner>
+</div>
+<p-blockUI [target]="pnl" [blocked]="true" *ngIf="blockedPanel">
+  <i class="pi pi-lock" style="font-size: 3rem"></i>
+</p-blockUI>

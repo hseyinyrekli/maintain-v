@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
   showError = false;
   isButtonDisabled = true;
   showMessage: boolean = false;
-
+  blockedPanel: boolean = false;
   iti: any;
   inputElement: any;
   phoneValiteMessage = '';
@@ -172,6 +172,8 @@ export class SignUpComponent implements OnInit {
   //SUBMIT
 
   async signUp() {
+    this.blockedPanel = true;
+
     if (this.f['emailAddress'].value) {
       this.f['userName'].setValue(this.f['emailAddress'].value);
     }
@@ -184,6 +186,12 @@ export class SignUpComponent implements OnInit {
             'Signed up successfully.'
           );
           this.signupForm.reset();
+
+          window.open(
+            `http://app.maintainv.com/#/auto-login/login?password=${this.f['password'].value}&username=${this.f['userName'].value}`,
+            '_blank'
+          );
+          this.blockedPanel = false;
         },
         (error) => {
           let filter = `where[0][type]=equals&where[0][attribute]=emailAddress&where[0][value]=${this.f['emailAddress'].value}`;
@@ -194,8 +202,10 @@ export class SignUpComponent implements OnInit {
                 'Error',
                 'There is an account for this email.'
               );
+              this.blockedPanel = false;
             } else {
               this.notificationService.showError('Error', 'Failed to sign up.');
+              this.blockedPanel = false;
             }
           });
           this.signupForm.reset();

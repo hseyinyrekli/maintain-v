@@ -7,3 +7,13 @@
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 @import "primeng/resources/primeng.css";
 @import "primeng/resources/themes/lara-light-blue/theme.css";
+.spinner {
+  position: absolute !important;
+  left: 46.5% !important;
+  top: 35% !important;
+  z-index: 1000 !important;
+}
+.spinner1 {
+  width: 100% !important;
+  height: 100% !important;
+}
