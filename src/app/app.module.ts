@@ -32,6 +32,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ContactComponent } from './components/contact/contact.component';
+import { SalesComponent } from './components/sales/sales.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +56,9 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     ForgotPasswordComponent,
     ContactComponent,
+    SalesComponent,
+    PrivacyComponent,
+    DeliveryComponent,
   ],
   imports: [
     HttpClientModule,

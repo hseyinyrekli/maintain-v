@@ -15,6 +15,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutComponent } from './components/about/about.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { SalesComponent } from './components/sales/sales.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
 
 const routes: Routes = [
   {
@@ -65,6 +68,18 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent,
+      },
+      {
+        path: 'privacy-policy',
+        component: PrivacyComponent,
+      },
+      {
+        path: 'sales-agreement',
+        component: SalesComponent,
+      },
+      {
+        path: 'delivery-and-return-notice',
+        component: DeliveryComponent,
       },
     ],
   },
